@@ -201,6 +201,14 @@ public class RobotPublisher extends Recorder implements Serializable,
 	}
 
 	/**
+	 * Get the enable cache value, default is true
+	 * @return true
+	 */
+	public boolean getEnableCache() {
+		return enableCache;
+	}
+
+	/**
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -264,7 +272,7 @@ public class RobotPublisher extends Recorder implements Serializable,
 
 			logger.println(Messages.robot_publisher_assigning());
 
-			RobotBuildAction action = new RobotBuildAction(build, result, FILE_ARCHIVE_DIR, listener, getReportFileName(), getLogFileName(), enableCache);
+			RobotBuildAction action = new RobotBuildAction(build, result, FILE_ARCHIVE_DIR, listener, getReportFileName(), getLogFileName(), getEnableCache());
 			build.addAction(action);
 
 			logger.println(Messages.robot_publisher_done());
